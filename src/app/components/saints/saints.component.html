@@ -1,1 +1,3 @@
-<p>saints works!</p>
+<title>All Saints</title>
+<button mat-button (click)="this.openAddDialog()" color="primary" >+add new saint+</button>  
+<app-saint *ngFor="let snt of (this.allsaints$ | async)" [saint]="snt"/>

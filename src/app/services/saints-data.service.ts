@@ -7,6 +7,7 @@ import { map } from "rxjs/operators";
 import { Saint } from "../model/saint";
 import { HttpOptions } from "@ngrx/data/src/dataservices/interfaces";
 import { baseApiUrlSaints } from "../app.constant";
+import { Update } from "@ngrx/entity";
 
 @Injectable()
 export class SaintsDataService extends DefaultDataService<Saint> {
@@ -21,4 +22,14 @@ export class SaintsDataService extends DefaultDataService<Saint> {
                 map(res => res)
             )
      }
+
+     override update(update: Update<Saint>, options?: HttpOptions): Observable<Saint> {
+        debugger; 
+        return this.http.put<Saint>(baseApiUrlSaints+"/"+ update.id, update.changes).pipe(
+            map(saint => ({id: saint.id, date: saint.date, description: saint.description}))
+        
+          );
+     }
+
+     
 }

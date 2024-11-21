@@ -1,8 +1,10 @@
 .saint-card {
     max-width: 400px;
+    
+    margin-bottom: 10px;
   }
   
 .saint-header-image {
-    background-image: url('../img/saint-avatar.png');
+    background-image: url('/assets/img/saint-avatar.png');
     background-size: cover;
 }

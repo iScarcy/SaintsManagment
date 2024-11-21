@@ -9,7 +9,7 @@ export class SaintResolver implements Resolve<boolean>{
 
     }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean>  {
+    resolve(route: ActivatedRouteSnapshot): Observable<boolean>  {
         
         return this.saintsService.loaded$ //controlliamo il load dei dati tramite questa variabile loaded$, offerta dal sistema che è true qualdo i dati sono stati caricati
             .pipe(
