@@ -24,12 +24,18 @@ export class SaintsDataService extends DefaultDataService<Saint> {
      }
 
      override update(update: Update<Saint>, options?: HttpOptions): Observable<Saint> {
-        debugger; 
+       
         return this.http.put<Saint>(baseApiUrlSaints+"/"+ update.id, update.changes).pipe(
             map(saint => ({id: saint.id, date: saint.date, description: saint.description}))
         
           );
      }
 
+     override add(entity: Saint, options?: HttpOptions): Observable<Saint> {
+        return this.http.post<Saint>(baseApiUrlSaints, entity).pipe(
+            map(saint => ({id: saint.id, date: saint.date, description: saint.description}))
+        
+          );
+     }
      
 }

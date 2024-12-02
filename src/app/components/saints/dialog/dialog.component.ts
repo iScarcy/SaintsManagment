@@ -96,6 +96,9 @@ export class DialogComponent implements OnInit {
       if(this.data.id>0){
         this.entityService.update(this.saint)
         this.dialog.closeAll()
+      }else{
+        this.entityService.add(this.saint);
+        this.dialog.closeAll();
       }
     }
   }
