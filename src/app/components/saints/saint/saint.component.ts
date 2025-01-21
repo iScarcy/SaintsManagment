@@ -5,6 +5,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Saint } from 'src/app/model/saint';
 import { DialogComponent } from '../dialog/dialog.component';
+import { baseHref } from 'src/app/app.constant';
 
 @Component({
   selector: 'app-saint',
@@ -41,7 +42,7 @@ export class SaintComponent {
   getSaintImg(id:number):string{
      const randomIndex = id%4
    
-    return "/assets/img/" + this.imgs[randomIndex];
+    return baseHref + "assets/img/" + this.imgs[randomIndex];
   }
 
   openEditDialog(){
